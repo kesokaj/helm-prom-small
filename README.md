@@ -22,10 +22,15 @@ server:
     scrape_interval: 5m
     scrape_timeout: 10s
     evaluation_interval: 1m
+  tolerations:
+    - key: "node-role.kubernetes.io/master"
+      operator: "Exists"
+  nodeSelector:
+    kubernetes.io/role: master
   persistentVolume:
     enabled: true
     size: 64Gi
-    storageClass: cephrbd      
+    storageClass: cephrbd
 pushgateway:
   enabled: false
   
