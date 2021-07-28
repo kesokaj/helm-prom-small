@@ -18,6 +18,7 @@ server:
     - storage.tsdb.no-lockfile
     - storage.tsdb.wal-compression
     - storage.tsdb.retention.size=60GB
+    - storage.tsdb.retention.time=30d
   global:
     scrape_interval: 5m
     scrape_timeout: 10s
